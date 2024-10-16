@@ -17,3 +17,8 @@ Routine App is a personal management application, divided into two main parts:
 - Node.js (v18 or higher recommended)
 - npm or yarn
 - MySQL (for the API database)
+
+### Documentation
+
+- [API](https://github.com/ericzardo/routine-app/tree/main/interface 'back-end installation')
+- [Interface](https://github.com/ericzardo/routine-app/tree/main/api 'front-end installation')

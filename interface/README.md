@@ -39,4 +39,4 @@ This is the front-end mobile app of the Routine App. It allows users to manage a
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/ericzardo/routine-app/blob/main/LICENSE 'See project license') file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE 'See project license') file for details.

@@ -71,4 +71,4 @@ Before setting up the project, make sure you have the following installed:
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/ericzardo/routine-app/blob/main/LICENSE 'See project license') file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE 'See project license') file for details.
