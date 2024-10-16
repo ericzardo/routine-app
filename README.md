@@ -20,5 +20,5 @@ Routine App is a personal management application, divided into two main parts:
 
 ### Documentation
 
-- [API](https://github.com/ericzardo/routine-app/tree/main/interface 'back-end installation')
-- [Interface](https://github.com/ericzardo/routine-app/tree/main/api 'front-end installation')
+- [API](https://github.com/ericzardo/routine-app/blob/main/api/README.md 'back-end installation')
+- [Interface](https://github.com/ericzardo/routine-app/blob/main/interface/README.md 'front-end installation')
