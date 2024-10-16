@@ -1,0 +1,66 @@
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum DocumentType {
+  FILE
+  FOLDER
+}
+
+model User {
+  id       String @id @default(uuid())
+  username String @unique
+  email    String @unique
+  password String
+
+  profiles Profile[] @relation("UserProfiles")
+
+  @@map("users")
+}
+
+model Profile {
+  id        String     @id @default(uuid())
+  name      String
+  alarms    Alarm[]
+  documents Document[]
+
+  userId String
+  user   User   @relation("UserProfiles", fields: [userId], references: [id])
+
+  @@map("profiles")
+}
+
+model Document {
+  id       String       @id @default(uuid())
+  name     String
+  type     DocumentType
+  modified DateTime     @default(now())
+
+  parentId String? // parent folder ID (null if root folder)
+  parent   Document?  @relation("FolderContent", fields: [parentId], references: [id])
+  content  Document[] @relation("FolderContent")
+
+  metadata Json? // Metadata adicionais (ex.: URL para o arquivo no Cloudflare R2)
+
+  profile   Profile @relation(fields: [profileId], references: [id])
+  profileId String
+}
+
+model Alarm {
+  id       String   @id @default(uuid())
+  name     String
+  time     DateTime
+  repeat   String   @default("")
+  sound    String
+  isActive Boolean
+
+  profile   Profile @relation(fields: [profileId], references: [id])
+  profileId String
+
+  @@map("alarms")
+}
